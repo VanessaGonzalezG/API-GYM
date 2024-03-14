@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 const connectToDB = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.3vlnlsh.mongodb.net/production?retryWrites=true&w=majority&appName=Cluster0`, {
+        await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jsugorf.mongodb.net/${process.env.ENV === 'dev' ? 'development' : 'production'}?retryWrites=true&w=majority&appName=Cluster0`, {
             autoIndex: true
         })
         console.log('Connected to Mongodb Atlas');
